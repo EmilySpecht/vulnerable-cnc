@@ -25,7 +25,9 @@ export async function initializeDatabase() {
       password: process.env.MYSQL_PASSWORD,
     });
 
-    await connection.query("CREATE DATABASE IF NOT EXISTS validate_cert");
+    await connection.query(
+      `CREATE DATABASE IF NOT EXISTS ${process.env.MYSQL_DATABASE}`
+    );
     await connection.end();
 
     // Agora cria as tabelas necessárias
