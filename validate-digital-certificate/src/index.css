@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f5fb;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 4ch;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+.CD-container,
+.CA-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.listing {
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  height: 260px;
+  background-color: #ffffff3a;
+  margin-bottom: 10px;
+  padding: 10px;
+  overflow: auto;
+  width: 100%;
+  gap: 5px;
+  display: grid;
+}
+
+.default-card {
+  position: relative;
+  transition: 0.5s box-shadow;
+  border: 1px solid #e8e8e8;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  word-break: break-all;
+}
+
+@media (max-width: 1400px) {
+  .default-card {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding: 30px;
+  }
+
+  .certificates-container {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .CA-container,
+  .CD-container {
+    width: 100%;
+  }
+}
+
+.default-card:hover,
+.default-card--selected {
+  transition: 0.5s;
+  border: 1px solid #5363ff;
+  box-shadow: 4px 4px 20px 0 #5363ff2a;
+}
+
+.validCAsInput::before,
+.validCDsInput::before {
+  height: 40px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #5363ff;
+  border: 1px solid #5363ff;
+  color: #fff;
+}
+
+.validCAsInput:hover::before,
+.validCDsInput:hover::before {
+  transition: 0.5s;
+  background-color: #6b7aff;
+}
+
+.validCAsInput::before {
+  content: "Carregar CA Confiável";
+}
+
+.validCDsInput::before {
+  content: "Carregar script customizado para CNC";
+}
+
+.validCAsInput::-webkit-file-upload-button,
+.validCDsInput::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 100%;
+}
+.issuedBy {
+  font-size: 16px;
+  font-weight: 500;
+  text-overflow: "ellipsis";
+  overflow: "hidden";
+  width: "100%";
+}
+
+.issuedTp {
+  color: #757575;
+  font-size: 14px;
+}
+
+.dueDate {
+  color: #757575;
+  font-size: 12px;
+}
+
+.certificates-container {
+  display: flex;
+  gap: 20px;
+  width: 80%;
+}
+
+.status-container {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+}
+
+.result-status {
+  height: 30px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0 50px;
+  border: 1px solid #ff362f;
+  color: #ff362f;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  background-color: #ff362f0e;
+}
+
+.green-status {
+  border: 1px solid green;
+  color: green;
+  border-radius: 30px;
+  background-color: rgba(0, 206, 0, 0.08);
+}
+
+.chain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.root-CA,
+.sub-CA,
+.end-user {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  height: 40px;
+  width: 100%;
+}
+
+.root-CA {
+  border-left: 30px solid #e8e8e8;
+}
+
+.sub-CA {
+  border-left: 40px solid #e8e8e8;
+}
+
+.end-user {
+  border-left: 70px solid #e8e8e8;
+}
+
+.info-text {
+  color: #757575;
+  font-size: 14px;
+  height: 20px;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+}
+
+.detail-item {
+  margin-top: 10px;
+  padding: 15px;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+}
+
+/* scrollbar */
+
+body::-webkit-scrollbar,
+.listing::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track,
+.listing::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb,
+.listing::-webkit-scrollbar-thumb {
+  background-color: #5363ff;
+  border-radius: 20px;
+}
+
+.flag {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  padding: 3px 12px;
+  border-radius: 20px;
+  border: 1px solid #ff362f;
+  background-color: #ff362f0e;
+  color: #ff362f;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.trusted {
+  border: 1px solid rgb(50, 203, 137);
+  color: rgb(50, 203, 137);
+  background-color: rgba(50, 203, 137, 0.05);
+}
