@@ -1,10 +1,10 @@
 import axios, { AxiosInstance } from "axios";
 
-const API_BASE_URL =
-  process.env.REACT_APP_API_URL || "http://192.168.31.37:3001";
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_URL || "http://192.168.0.146:3001",
+  // baseURL: API_BASE_URL || "http://localhost:3001",
   timeout: 15000,
 });
 

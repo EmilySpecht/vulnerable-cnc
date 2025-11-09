@@ -41,7 +41,14 @@ try {
 const app = express();
 
 app.use(
-  cors({ origin: ["http://localhost:3000", "http://192.168.31.37:3000"] })
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://192.168.31.37:3000",
+      "http://192.168.0.146:3000",
+      // "http://127.0.0.1:3000",
+    ],
+  })
 );
 app.use(express.json());
 
