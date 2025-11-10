@@ -91,8 +91,8 @@ const CDList = ({
     <div className="CD-container">
       <p className="info-text">
         {certData.length > 0
-          ? "Selecione um script para verificar se é valido ou não."
-          : "Você ainda não tem scripts"}
+          ? "Selecione um script para criar seu modelo CNC personalizado."
+          : "Adicione scripts para criar modelos CNC personalizados."}
       </p>
       <div className="listing">
         {certData.map(({ id }) => {
@@ -110,6 +110,7 @@ const CDList = ({
                 </div>
               )}
               <img src={cncImage} className="image" alt="cnc" />
+              <span>{id}</span>
             </div>
           );
         })}
