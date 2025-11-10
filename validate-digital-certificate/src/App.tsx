@@ -43,6 +43,8 @@ function MainContent() {
 
   return (
     <div className="main">
+      <h2>Gerenciador de processos industriais</h2>
+      <h3>Customize e crie modelos para máquinas automatizadas (CNC)</h3>
       <div className="certificates-container">
         <CDList
           certData={certData}
